@@ -141,13 +141,6 @@ setInterval(() => {
 // --- Deneme Sürümü Modal İşlemleri ---
 
 // Modalı açan fonksiyon
-function openTrialModal() {
-  const modalEl = document.getElementById("trialModal");
-  // Var olan instance'ı al veya yeni oluştur
-  const myModal =
-    bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-  myModal.show();
-}
 
 // Form gönderimi (Submission)
 /* document.addEventListener("DOMContentLoaded", () => {

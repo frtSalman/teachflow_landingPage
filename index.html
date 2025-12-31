@@ -696,6 +696,16 @@
     </div>
 
     <script>
+      function openTrialModal() {
+        const modalEl = document.getElementById("trialModal");
+        // Instance kontrolü yaparak odağın kaybolmasını engelleriz
+        let myModal = bootstrap.Modal.getInstance(modalEl);
+        if (!myModal) {
+          myModal = new bootstrap.Modal(modalEl);
+        }
+        myModal.show();
+      }
+
       const submitTrialBtn = document.getElementById("submit");
       submitTrialBtn.addEventListener("click", async () => {
         const form = document.getElementById("trialForm");
