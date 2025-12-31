@@ -125,3 +125,91 @@ document.querySelectorAll(".btn").forEach((button) => {
     }
   });
 });
+
+// Hero Slider
+const slides = document.querySelector(".hero-slides");
+const slideImages = document.querySelectorAll(".hero-slides img");
+
+let currentIndex = 0;
+const totalSlides = slideImages.length;
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}, 3500);
+
+// --- Deneme Sürümü Modal İşlemleri ---
+
+// Modalı açan fonksiyon
+function openTrialModal() {
+  const myModal = new bootstrap.Modal(document.getElementById("trialModal"));
+  myModal.show();
+}
+
+// Form gönderimi (Submission)
+document.getElementById("trialForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const feedback = document.getElementById("formFeedback");
+  const originalBtnText = submitBtn.innerHTML;
+
+  // Butonu yükleniyor moduna al
+  submitBtn.disabled = true;
+  submitBtn.innerHTML =
+    '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Gönderiliyor...';
+
+  // Form verilerini topla
+  const formData = {
+    fullName: document.getElementById("fullName").value,
+    email: document.getElementById("email").value,
+    branch: document.getElementById("branch").value,
+    city: document.getElementById("city").value,
+    source: "TeachFlow Landing Page",
+    date: new Date().toISOString(),
+  };
+
+  // BURAYA N8N WEBHOOK ADRESİNİZİ YAZIN (Production URL kullanın)
+  const webhookURL =
+    "https://n8n.teachflow.net/webhook/teachflow-trial-request";
+
+  // n8n'e veriyi gönder
+  fetch(webhookURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Başarılı
+        feedback.style.display = "block";
+        feedback.className = "mt-3 text-center text-success fw-bold";
+        feedback.innerHTML =
+          '<i class="bi bi-check-circle-fill"></i> İsteğiniz başarıyla alındı! En kısa sürede size döneceğiz.';
+        document.getElementById("trialForm").reset();
+
+        // 3 saniye sonra modalı kapat
+        setTimeout(() => {
+          const modalEl = document.getElementById("trialModal");
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          modal.hide();
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+          feedback.style.display = "none";
+        }, 3000);
+      } else {
+        throw new Error("Sunucu hatası");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      feedback.style.display = "block";
+      feedback.className = "mt-3 text-center text-danger";
+      feedback.innerText =
+        "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya support@teachflow.net adresine yazın.";
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    });
+});
