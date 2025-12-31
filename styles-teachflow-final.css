@@ -1,23 +1,17 @@
 :root {
-  /* TeachFlow logo exact colors */
-  --primary-color: #1b4a57; /* logo dark teal */
-  --secondary-color: #2f8fb1; /* logo blue */
-  --cta-primary: #9fb03e; /* logo green */
-  --cta-secondary: #ff8a33; /* supporting orange */
-
-  /* Text */
-  --text-dark: #0f1724;
-  --text-light: #6b7280;
-  --text-on-dark: #eef3f6;
-
-  /* Backgrounds */
-  --bg-light: #ffffff;
-  --bg-dark: #0f1724;
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #334eea 0%, #2f8fb1 100%);
-  --gradient-cta-green: linear-gradient(135deg, #9fb03e 0%, #7f962f 100%);
-  --gradient-cta-orange: linear-gradient(135deg, #ff8a33 0%, #ff6a00 100%);
+  --primary-color: #2563eb;
+  --secondary-color: #3b82f6;
+  --accent-color: #06b6d4;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --gradient-primary: linear-gradient(
+    135deg,
+    #1e40af 0%,
+    #3b82f6 50%,
+    #06b6d4 100%
+  );
+  --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
 }
 
 * {
@@ -161,6 +155,7 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   border: none;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(11, 79, 108, 0.28);
 }

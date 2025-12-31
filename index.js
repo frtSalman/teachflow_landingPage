@@ -142,74 +142,83 @@ setInterval(() => {
 
 // Modalı açan fonksiyon
 function openTrialModal() {
-  const myModal = new bootstrap.Modal(document.getElementById("trialModal"));
+  const modalEl = document.getElementById("trialModal");
+  // Var olan instance'ı al veya yeni oluştur
+  const myModal =
+    bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
   myModal.show();
 }
 
 // Form gönderimi (Submission)
-document.getElementById("trialForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+/* document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("trialForm");
 
-  const submitBtn = this.querySelector('button[type="submit"]');
+  if (!form) {
+    console.warn("trialForm bulunamadı");
+    return;
+  }
+
   const feedback = document.getElementById("formFeedback");
-  const originalBtnText = submitBtn.innerHTML;
 
-  // Butonu yükleniyor moduna al
-  submitBtn.disabled = true;
-  submitBtn.innerHTML =
-    '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Gönderiliyor...';
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  // Form verilerini topla
-  const formData = {
-    fullName: document.getElementById("fullName").value,
-    email: document.getElementById("email").value,
-    branch: document.getElementById("branch").value,
-    city: document.getElementById("city").value,
-    source: "TeachFlow Landing Page",
-    date: new Date().toISOString(),
-  };
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
 
-  // BURAYA N8N WEBHOOK ADRESİNİZİ YAZIN (Production URL kullanın)
-  const webhookURL =
-    "https://n8n.teachflow.net/webhook/teachflow-trial-request";
+    // Yükleniyor durumu
+    submitBtn.disabled = true;
+    submitBtn.innerHTML =
+      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Gönderiliyor...';
 
-  // n8n'e veriyi gönder
-  fetch(webhookURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => {
-      if (response.ok) {
-        // Başarılı
-        feedback.style.display = "block";
-        feedback.className = "mt-3 text-center text-success fw-bold";
-        feedback.innerHTML =
-          '<i class="bi bi-check-circle-fill"></i> İsteğiniz başarıyla alındı! En kısa sürede size döneceğiz.';
-        document.getElementById("trialForm").reset();
+    const formData = {
+      fullName: document.getElementById("fullName")?.value || "",
+      email: document.getElementById("email")?.value || "",
+      branch: document.getElementById("branch")?.value || "",
+      city: document.getElementById("city")?.value || "",
+      source: "TeachFlow Landing Page",
+      date: new Date().toISOString(),
+    };
 
-        // 3 saniye sonra modalı kapat
-        setTimeout(() => {
-          const modalEl = document.getElementById("trialModal");
-          const modal = bootstrap.Modal.getInstance(modalEl);
-          modal.hide();
-          submitBtn.innerHTML = originalBtnText;
-          submitBtn.disabled = false;
-          feedback.style.display = "none";
-        }, 3000);
-      } else {
-        throw new Error("Sunucu hatası");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
+    const webhookURL =
+      "https://n8n.teachflow.net/webhook/teachflow-trial-request";
+
+    try {
+      const response = await fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error(`Sunucu hatası: ${response.status}`);
+
+      // Başarılı
+      feedback.style.display = "block";
+      feedback.className = "mt-3 text-center text-success fw-bold";
+      feedback.innerHTML =
+        '<i class="bi bi-check-circle-fill"></i> İsteğiniz alındı! Size döneceğiz.';
+      form.reset();
+
+      setTimeout(() => {
+        // Modalı kapat
+        const modalEl = document.getElementById("trialModal");
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+
+        // Butonu eski haline getir
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        feedback.style.display = "none";
+      }, 2000);
+    } catch (err) {
+      console.error("Hata:", err);
       feedback.style.display = "block";
       feedback.className = "mt-3 text-center text-danger";
-      feedback.innerText =
-        "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya support@teachflow.net adresine yazın.";
+      feedback.innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
+
       submitBtn.innerHTML = originalBtnText;
       submitBtn.disabled = false;
-    });
-});
+    }
+  });
+}); */
+// END OF FILE - Make sure there is NO extra '}' after this line
