@@ -71,7 +71,7 @@ body {
 }
 
 .btn-login:hover {
-  background: var(--primary-color);
+  background: var(--bg-light);
   color: white;
   transform: translateY(-2px);
 }
@@ -89,7 +89,7 @@ body {
 
 .btn-signup:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(11, 79, 108, 0.28);
+  box-shadow: 0 10px 20px rgb(8, 104, 145);
 }
 
 /* Hero Section */
@@ -162,6 +162,7 @@ body {
 
 .btn-primary-large:hover {
   transform: translateY(-3px);
+  color: white;
   box-shadow: 0 8px 25px rgba(11, 79, 108, 0.36);
 }
 
@@ -522,7 +523,7 @@ footer {
 .button-primary,
 .cta-primary {
   background: var(--gradient-cta-green);
-  color: #0f1724;
+  color: white;
   box-shadow: 0 6px 18px rgba(123, 209, 58, 0.35);
 }
 
