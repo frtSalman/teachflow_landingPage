@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
@@ -107,59 +107,57 @@
             />
             <span>TeachFlow</span>
           </a>
-          <button class="btn btn-login">
-            <a class="nav-link" href="https://app.teachflow.net/login"
-              >Giriş Yap</a
-            >
+
+          <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="bi bi-list"></i>
           </button>
-          <!-- <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-          <i class="bi bi-list"></i>
-           </button> 
           <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
             <a class="nav-link" href="#features">Özellikler</a>
-          <a class="nav-link" href="#how-it-works">Nasıl Çalışır</a>
-          <a class="nav-link" href="#pricing">Fiyatlandırma</a>
-          <a class="nav-link" href="#resources">Kaynaklar</a> -->
-          <!-- <button class="btn btn-login">
-              <a class="nav-link" href="https://app.teachflow.net/login"
-                >Giriş Yap</a
-              >
-            </button> -->
-          <!--<button class="btn btn-signup">
-            <a class="nav-link" href="#resources">Ücretsiz Başla</a>
-            </button>
-          </div>-->
+            <a class="nav-link" href="#how-it-works">Nasıl Çalışır</a>
+            <a class="nav-link" href="#pricing">Fiyatlandırma</a>
+            <a class="nav-link" href="#resources">Kaynaklar</a>
+            <a
+              class="btn btn-login nav-cta"
+              href="https://app.teachflow.net/login"
+            >
+              Giriş Yap
+            </a>
+            <a
+              class="btn btn-signup nav-cta"
+              href="https://app.teachflow.net/signup"
+            >
+              Kayıt Ol
+            </a>
+          </div>
         </div>
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <main>
       <section class="hero" id="home">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
+          <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9 text-center hero-content">
+              <div class="hero-ai-badge" data-aos="fade-down">
+                <i class="bi bi-cpu-fill" aria-hidden="true"></i>
+                Yapay zekâ destekli öğretim altyapısı
+              </div>
               <h1 data-aos="fade-right">
-                Öğretmenler İçin Yapay Zeka Destekli Ders Planı ve Soru Çözüm
-                Platformu
+                Öğretiminizin gücünü yapay zekâ ile artırın
               </h1>
               <p data-aos="fade-right" data-aos-delay="100">
-                Kullanımı kolay ve ilgi çekici ara yüzümüzle ders planları
-                oluşturun, Yapay Zeka destekli soru çözüm sistemi ile hazırlık
-                saatlerinden tasarruf edin.
+                Ders planlarınızı saniyeler içinde oluşturun, öğrenci gelişimini
+                net içgörülerle takip edin ve her soruya adım adım çözüm sunun.
               </p>
               <div
                 class="hero-buttons d-flex"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <button
-                  class="btn btn-primary-large"
-                  onclick="openTrialModal()"
+                <a class="btn btn-outline-large" href="#pricing"
+                  >Planları İnceleyin</a
                 >
-                  Ücretsiz Deneme Başlatın
-                </button>
-                <!-- <button class="btn btn-outline-large">Demo İzle</button> -->
+                <a class="btn btn-outline-large" href="#">Demo İzleyin</a>
               </div>
               <!-- <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
               <span class="me-3"
@@ -171,31 +169,6 @@
                 ücretsiz deneme</span
               >
             </div> -->
-            </div>
-            <div class="col-lg-6">
-              <div class="hero-slider">
-                <div class="hero-slides">
-                  <img
-                    src="https://cdn.teachflow.net/logo/mainpage_1.webp"
-                    alt="TeachFlow yapay zeka destekli öğretmen paneli"
-                    loading="lazy"
-                  />
-                  <img
-                    src="https://cdn.teachflow.net/logo/mainpage_2.webp"
-                    alt="TeachFlow yapay zeka destekli öğretmen paneli"
-                    loading="lazy"
-                  />
-                  <img
-                    src="https://cdn.teachflow.net/logo/mainpage_3.webp"
-                    alt="TeachFlow yapay zeka destekli öğretmen paneli"
-                  />
-                  <img
-                    src="https://cdn.teachflow.net/logo/mainpage_4.webp"
-                    alt="TeachFlow yapay zeka destekli öğretmen paneli"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -241,12 +214,17 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
               <div class="feature-card">
                 <div class="feature-icon">
-                  <i class="bi bi-people"></i>
+                  <img
+                    src="/assets/teachflow-ai-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                    class="hero-ai-icon"
+                  />
                 </div>
-                <h3>Yapay Zeka Soru Çözümü</h3>
+                <h3>Yapay Zeka Destekli Deneme Analizi</h3>
                 <p>
-                  Öğrenciniz yapamadığı soruları girsin, yapay zeka anında adım
-                  adım çözümler sunsun.
+                  Öğrencinizin yaptığı deneme sonuçlarını pdf yada fotoğraf
+                  olarak sisteme yükleyin sistem size analizini yapsın.
                 </p>
               </div>
             </div>
@@ -292,216 +270,314 @@
       </section>
 
       <!-- How It Works -->
-      <!--  <section class="how-it-works" id="how-it-works">
-      <div class="container">
-        <div class="section-title">
-          <h2 data-aos="fade-up">TeachFlow Nasıl Çalışır</h2>
-          <p data-aos="fade-up" data-aos-delay="100">
-            Üç basit adımda başlayın
-          </p>
+      <section class="how-it-works" id="how-it-works">
+        <div class="container">
+          <div class="section-title">
+            <h2 data-aos="fade-up">TeachFlow Nasıl Çalışır</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Üç basit adımda başlayın
+            </p>
+          </div>
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Kayıt Olun ve Başlayın</h3>
+                <p>
+                  Hesabınızı oluşturun öğrencilerinize ve velilerinize kayıt
+                  davetiyesi yollayın.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-12"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Araçlarınızı Seçin</h3>
+                <p>
+                  Dersler, testler ve daha fazlasını oluşturun, yapay zeka
+                  destekli deneme analizleri ile öğrencinizin seviyesini takip
+                  edin.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-12"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Öğretin ve Geliştirin</h3>
+                <p>
+                  İlgi çekici içerik sunun ve analizleri kullanarak sürekli
+                  olarak öğretiminizi geliştirin.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div
-            class="col-lg-4 col-md-12"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="step-card">
-              <div class="step-number">1</div>
-              <h3>Kayıt Olun ve Başlayın</h3>
-              <p>
-                Ücretsiz hesabınızı oluşturun ve öğretim ihtiyaçlarınızı ve ders
-                alanınızı bize bildirin.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-12"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="step-card">
-              <div class="step-number">2</div>
-              <h3>Araçlarınızı Seçin</h3>
-              <p>
-                Dersler, testler ve daha fazlasını oluşturmak için yapay zeka
-                destekli araçlarımızdan seçim yapın.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-12"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="step-card">
-              <div class="step-number">3</div>
-              <h3>Öğretin ve Geliştirin</h3>
-              <p>
-                İlgi çekici içerik sunun ve analizleri kullanarak sürekli olarak
-                öğretiminizi geliştirin.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+      </section>
 
       <!-- Statistics -->
       <!-- <section class="stats">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up">
-            <div class="stat-item">
-              <div class="stat-number" data-target="50000">0</div>
-              <div class="stat-label">Öğretmen Bize Güveniyor</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+              <div class="stat-item">
+                <div class="stat-number" data-target="50000">0</div>
+                <div class="stat-label">Öğretmen Bize Güveniyor</div>
+              </div>
             </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="stat-item">
-              <div class="stat-number" data-target="1000000">0</div>
-              <div class="stat-label">Öğrenci Yardım Aldı</div>
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="stat-item">
+                <div class="stat-number" data-target="1000000">0</div>
+                <div class="stat-label">Öğrenci Yardım Aldı</div>
+              </div>
             </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="stat-item">
-              <div class="stat-number" data-target="500000">0</div>
-              <div class="stat-label">Ders Oluşturuldu</div>
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="stat-item">
+                <div class="stat-number" data-target="500000">0</div>
+                <div class="stat-label">Ders Oluşturuldu</div>
+              </div>
             </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="stat-item">
-              <div class="stat-number" data-target="98">0</div>
-              <div class="stat-label">% Memnuniyet Oranı</div>
+            <div
+              class="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="stat-item">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">% Memnuniyet Oranı</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section> -->
 
       <!-- Pricing -->
-      <!-- <section class="pricing" id="pricing">
-      <div class="container">
-        <div class="section-title">
-          <h2 data-aos="fade-up">Planınızı Seçin</h2>
-          <p data-aos="fade-up" data-aos-delay="100">
-            Ücretsiz başlayın ve büyüdükçe ölçeklendirin
-          </p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-card">
-              <h3>Başlangıç</h3>
-              <div class="price">
-                <span class="price-currency">₺</span>0<span class="price-period"
-                  >/ay</span
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <div class="section-title">
+            <h2 data-aos="fade-up">Planınızı Seçin</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Tüm planlar 20 öğrenciyle başlar; ihtiyacınız arttıkça kolayca
+              genişletin.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="pricing-card">
+                <h3>Aylık Plan</h3>
+                <div class="price">
+                  <span class="price-currency">₺</span>1.500<span
+                    class="price-period"
+                    >/ay</span
+                  >
+                </div>
+                <div
+                  class="student-pricing"
+                  aria-label="Öğrenci kapasitesi ve ek ücret bilgisi"
                 >
+                  <div class="student-pricing-icon" aria-hidden="true">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div>
+                    <strong>20 öğrenci dahil</strong>
+                    <span>Her ek 10 öğrenci için <b>+₺200</b></span>
+                  </div>
+                </div>
+                <ul class="list-unstyled mt-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Çalışma
+                    Programı
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Öğrenci
+                    Takip Tablosu
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Takip Sistemi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Deneme
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Soru
+                    Havuzu
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100 mt-3">Başlayın</button>
               </div>
-              <ul class="list-unstyled mt-4">
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> 5 sınıfa
-                  kadar
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Temel
-                  ders şablonları
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Aylık 100
-                  test denemesi
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> E-posta
-                  desteği
-                </li>
-              </ul>
-              <button class="btn btn-outline-primary w-100 mt-3">
-                Ücretsiz Başla
-              </button>
             </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-card featured">
-              <h3>Profesyonel</h3>
-              <div class="price">
-                <span class="price-currency">₺</span>2000<span
-                  class="price-period"
-                  >/ay</span
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="pricing-card featured">
+                <h3>3 Aylık</h3>
+                <div class="price">
+                  <span class="price-currency">₺</span>3900
+                </div>
+                <div
+                  class="student-pricing"
+                  aria-label="Öğrenci kapasitesi ve ek ücret bilgisi"
                 >
+                  <div class="student-pricing-icon" aria-hidden="true">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div>
+                    <strong>20 öğrenci dahil</strong>
+                    <span>Her ek 10 öğrenci için <b>+₺500</b></span>
+                  </div>
+                </div>
+                <ul class="list-unstyled mt-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Çalışma
+                    Programı
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Öğrenci
+                    Takip Tablosu
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Takip Sistemi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Deneme
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Soru
+                    Havuzu
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100 mt-3">Başlayın</button>
               </div>
-              <ul class="list-unstyled mt-4">
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Sınırsız
-                  sınıf
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Premium
-                  ders şablonları
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Sınırsız
-                  test denemesi
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Gelişmiş
-                  analizler
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Öncelikli
-                  destek
-                </li>
-              </ul>
-              <button class="btn btn-primary w-100 mt-3">Başlayın</button>
             </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing-card">
-              <h3>Okul</h3>
-              <div class="price">
-                <span class="price-currency">İletişime geçin</span>
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="pricing-card">
+                <h3>6 Aylık</h3>
+                <div class="price">
+                  <span class="price-currency">₺</span>6900
+                </div>
+                <div
+                  class="student-pricing"
+                  aria-label="Öğrenci kapasitesi ve ek ücret bilgisi"
+                >
+                  <div class="student-pricing-icon" aria-hidden="true">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div>
+                    <strong>20 öğrenci dahil</strong>
+                    <span>Her ek 10 öğrenci için <b>+₺800</b></span>
+                  </div>
+                </div>
+                <ul class="list-unstyled mt-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Çalışma
+                    Programı
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Öğrenci
+                    Takip Tablosu
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Takip Sistemi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Deneme
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Soru
+                    Havuzu
+                  </li>
+                </ul>
+                <button class="btn btn-primary w-100 mt-3">Başlayın</button>
               </div>
-              <ul class="list-unstyled mt-4">
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Pro'daki
-                  her şey
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Ekip
-                  işbirliği
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Özel
-                  markalaştırma
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Özel
-                  hesap yöneticisi
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check-circle-fill text-success"></i> Özel
-                  entegrasyonlar
-                </li>
-              </ul>
-              <button class="btn btn-outline-primary w-100 mt-3">
-                Satışla İletişime Geç
-              </button>
+            </div>
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="pricing-card">
+                <h3>12 Aylık</h3>
+                <div class="price">
+                  <span class="price-currency">₺</span>12900
+                </div>
+                <div
+                  class="student-pricing"
+                  aria-label="Öğrenci kapasitesi ve ek ücret bilgisi"
+                >
+                  <div class="student-pricing-icon" aria-hidden="true">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div>
+                    <strong>20 öğrenci dahil</strong>
+                    <span>Her ek 10 öğrenci için <b>+₺1200</b></span>
+                  </div>
+                </div>
+                <ul class="list-unstyled mt-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Çalışma
+                    Programı
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Öğrenci
+                    Takip Tablosu
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Konu
+                    Takip Sistemi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Deneme
+                    Analizi
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success"></i> Soru
+                    Havuzu
+                  </li>
+                </ul>
+
+                <a href="https://app.teachflow.net/signup">
+                  <button class="btn btn-primary w-100 mt-3">Başlayın</button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section>
 
       <!-- FAQ Section -->
       <section class="faq" id="resources">
@@ -538,8 +614,8 @@
                       çözüm performansı ve belirli aralıklarla yapılan konu
                       tekrar testlerindeki performansını anlık olarak kaydeder.
                       Eğer bir konuda "başarı oranı" düşmeye başlarsa, sistem
-                      bunu erkenden tespit ederek size raporlar. Böylece sorun
-                      büyümeden müdahale etme şansınız olur.
+                      sahip olduğu grafikler sayesinde erkenden size raporlar.
+                      Böylece sorun büyümeden müdahale etme şansınız olur.
                     </div>
                   </div>
                 </div>
@@ -559,7 +635,7 @@
                     class="accordion-collapse collapse"
                     data-bs-parent="#faqAccordion"
                   >
-                    <div class="accordion-body">
+                    <!-- <div class="accordion-body">
                       Kesinlikle hayır. TeachFlow’un en güçlü yanlarından biri
                       "Soru Arşivi" özelliğidir. Öğrencilerin yapamadığı tüm
                       sorular sisteme fotoğraflanarak yüklenir. Yapay zeka
@@ -570,6 +646,20 @@
                       öğrencinin karşısına tekrar çıkarılarak tek başına çözüp
                       çözemediği tespit edilir. Böylece "ezberleme değil,
                       gerçekten öğrenme" süreci tamamlanır.
+                    </div> -->
+                    <div class="accordion-body">
+                      Kesinlikle hayır. TeachFlow’un en güçlü yanlarından biri
+                      "Soru Arşivi" özelliğidir. Öğrencilerin yapamadığı tüm
+                      sorular sisteme ders ve konulara ayrılarak ve
+                      fotoğraflanarak yüklenir. Öğretmenler soruların
+                      çözümlerini fotoğraf ya da video olarak ilgili soruya
+                      yükler.Öğrenciler istedikleri zaman soruların çözümlerini
+                      tekrar inceleyip bilgilerini tazeleyebilirler. Daha sonra
+                      sorular belirli aralıklarla öğrencinin karşısına tekrar
+                      çıkarılarak tek başına çözüp çözemediği tespit edilir.
+                      Öğretmenler istedikleri taktirde istedikleri konuda
+                      çözülemeyen sorulardan bir test hazırlayabilir. Böylece
+                      "ezberleme değil, gerçekten öğrenme" süreci tamamlanır.
                     </div>
                   </div>
                 </div>
@@ -602,7 +692,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item mb-3">
+                <!-- <div class="accordion-item mb-3">
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
@@ -629,7 +719,7 @@
                       cebinde bulur.
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -639,9 +729,21 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <!--<div class="row">
-           <div class="col-lg-4 mb-4">
-            <h4><i class="bi bi-mortarboard-fill"></i> TeachFlow</h4>
+        <div class="row gy-4">
+          <div class="col-lg-4 mb-4">
+            <a
+              class="footer-brand"
+              href="#home"
+              aria-label="TeachFlow ana sayfa"
+            >
+              <img
+                src="https://teachflow.b-cdn.net/logo/teachflow-II.png"
+                alt="TeachFlow"
+                width="42"
+                height="42"
+              />
+              <span>TeachFlow</span>
+            </a>
             <p class="mt-3">
               Daha iyi öğrenim deneyimleri oluşturmak için eğitimcileri yapay
               zeka destekli araçlarla güçlendiriyoruz.
@@ -652,51 +754,80 @@
               <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
               <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
             </div>
-          </div> -->
-        <!-- <div class="col-lg-2 col-md-6 mb-4">
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
             <h5>Ürün</h5>
             <ul class="footer-links">
               <li><a href="#features">Özellikler</a></li>
               <li><a href="#pricing">Fiyatlandırma</a></li>
-              <li><a href="#">Güvenlik</a></li>
-              <li><a href="#">Yol Haritası</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6 mb-4">
-            <h5>Şirket</h5>
-            <ul class="footer-links">
-              <li><a href="#">Hakkımızda</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Kariyer</a></li>
-              <li><a href="#">İletişim</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6 mb-4">
             <h5>Kaynaklar</h5>
             <ul class="footer-links">
-              <li><a href="#">Dokümantasyon</a></li>
-              <li><a href="#">Eğitimler</a></li>
-              <li><a href="#">Topluluk</a></li>
-              <li><a href="#">Destek</a></li>
+              <li><a href="#resources">Sıkça Sorulan Sorular</a></li>
+              <li><a href="#features">Özellikler</a></li>
+              <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
+              <li><a href="mailto:support@teachflow.net">Destek</a></li>
             </ul>
           </div>
-          <div class="col-lg-2 col-md-6 mb-4">
-            <h5>Yasal</h5>
-            <ul class="footer-links">
-              <li><a href="#">Gizlilik</a></li>
-              <li><a href="#">Şartlar</a></li>
-              <li><a href="#">Çerez Politikası</a></li>
-              <li><a href="#">KVKK</a></li>
+          <div class="col-lg-4 col-md-12 mb-4">
+            <h5>Yasal Sözleşmeler</h5>
+            <ul class="footer-links legal-links">
+              <li>
+                <a
+                  href="https://cdn.teachflow.net/sozlesmeler/Web_Sitesi_KVKK_Aydinlatma_Metni.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Aydınlatma Metni</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cdn.teachflow.net/sozlesmeler/Web_Sitesi_Uyelik_ve_Kullanim_Sartlar.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Üyelik Sözleşmesi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cdn.teachflow.net/sozlesmeler/Yaz%C4%B1l%C4%B1m_Kullan%C4%B1m_Sozlesmesi.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Yazılım Kullanım Sözleşmesi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cdn.teachflow.net/sozlesmeler/Mesafeli_Satis_Sozlesmesi.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Mesafeli Satış Sözleşmesi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cdn.teachflow.net/sozlesmeler/Iade_Politikasi.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >İade Politikası</a
+                >
+              </li>
             </ul>
           </div>
-        </div> -->
-        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1)" />
-        <div class="text-center pb-3">
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
           <p>&copy; 2026 TeachFlow. Tüm hakları saklıdır.</p>
+          <p class="footer-note">
+            Eğitimcilerin daha etkili öğrenme deneyimleri tasarlaması için
+            geliştirildi.
+          </p>
         </div>
       </div>
     </footer>
-    <div
+    <!-- <div
       class="modal fade"
       id="trialModal"
       tabindex="-1"
@@ -806,7 +937,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script>
       function openTrialModal() {

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 284" role="img" aria-labelledby="title desc">
+  <title id="title">AI ikonu</title>
+  <desc id="desc">Yuvarlatılmış çerçeve içinde AI harfleri ve parlak yıldız simgesi.</desc>
+
+  <!-- Rounded AI frame -->
+  <path d="M141 217H84c-17.1 0-31-13.9-31-31V92c0-17.1 13.9-31 31-31h94c17.1 0 31 13.9 31 31v48" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+
+  <!-- A -->
+  <path d="M78.1 172.4 102.5 99c.5-1.5 1.9-2.5 3.5-2.5h10.8c1.6 0 3 1 3.5 2.5l22.4 73.4c.7 2.3-1 4.6-3.4 4.6h-7.1c-1.6 0-3-1-3.5-2.5l-4-12.5H96.4l-3.7 12.5c-.5 1.5-1.9 2.5-3.5 2.5h-7.6c-2.4 0-4.2-2.3-3.5-4.6Zm22-20.4h20.8l-10.5-34.4-10.3 34.4Z" fill="#000"/>
+
+  <!-- I -->
+  <rect x="161" y="96.5" width="12" height="80.5" rx="2.5" fill="#000"/>
+
+  <!-- Sparkle -->
+  <path d="M203.5 163.5c.8 0 1.6.5 1.9 1.4 5 17.5 12 25 30.5 33l9.5 4.1c2.8 1.2 2.8 3.2 0 4.4l-9.5 4.1c-18.5 8-25.5 15.5-30.5 33-.7 2.4-4.2 2.4-4.9 0-5-17.5-12-25-30.5-33l-9.5-4.1c-2.8-1.2-2.8-3.2 0-4.4l9.5-4.1c18.5-8 25.5-15.5 30.5-33 .3-.9 1.1-1.4 1.9-1.4h1.5Z" fill="#000"/>
+</svg>
