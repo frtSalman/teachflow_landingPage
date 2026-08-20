@@ -314,7 +314,7 @@ body {
   box-shadow: 0 20px 40px rgba(11, 79, 108, 0.28);
 }
 
-.pricing-card.featured::before {
+/* .pricing-card.featured::before {
   content: "EN POPÜLER";
   position: absolute;
   top: -15px;
@@ -326,7 +326,7 @@ body {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-}
+} */
 
 .pricing-card:hover {
   transform: translateY(-10px);
@@ -335,6 +335,19 @@ body {
 
 .pricing-card.featured:hover {
   transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-payment-badge {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.pricing-payment-badge img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
 }
 
 .price {
