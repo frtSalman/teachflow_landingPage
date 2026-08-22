@@ -108,10 +108,16 @@
             <span>TeachFlow</span>
           </a>
 
-          <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-label="Menüyü aç veya kapat"
+            onclick="toggleMobileMenu()"
+          >
             <i class="bi bi-list"></i>
           </button>
-          <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
+          <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#features">Özellikler</a>
             <a class="nav-link" href="#how-it-works">Nasıl Çalışır</a>
             <a class="nav-link" href="#pricing">Fiyatlandırma</a>
@@ -816,7 +822,14 @@
               <li><a href="#resources">Sıkça Sorulan Sorular</a></li>
               <li><a href="#features">Özellikler</a></li>
               <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
-              <li><a href="mailto:support@teachflow.net">Destek</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>İletişim</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:support@teachflow.com">support@teachflow.com</a>
+              </li>
             </ul>
           </div>
           <div class="col-lg-4 col-md-12 mb-4">
@@ -988,7 +1001,7 @@
     </div> -->
 
     <script>
-      function openTrialModal() {
+      /*  function openTrialModal() {
         const modalEl = document.getElementById("trialModal");
         // Instance kontrolü yaparak odağın kaybolmasını engelleriz
         let myModal = bootstrap.Modal.getInstance(modalEl);
@@ -1068,7 +1081,7 @@
           submitBtn.innerHTML = originalBtnText;
           submitBtn.disabled = false;
         }
-      });
+      }); */
     </script>
 
     <!-- Scripts -->

@@ -45,10 +45,18 @@ counters.forEach((counter) => {
 });
 
 // Mobile Menu Toggle
-function toggleMobileMenu() {
+window.toggleMobileMenu = function toggleMobileMenu() {
   const navMenu = document.querySelector(".navbar-nav");
-  navMenu.classList.toggle("show");
-}
+  const toggleButton = document.querySelector(".mobile-menu-toggle");
+
+  if (!navMenu) return;
+
+  const isOpen = navMenu.classList.toggle("show");
+
+  if (toggleButton) {
+    toggleButton.setAttribute("aria-expanded", String(isOpen));
+  }
+};
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -127,7 +135,7 @@ document.querySelectorAll(".btn").forEach((button) => {
 });
 
 // Hero Slider
-const slides = document.querySelector(".hero-slides");
+/* const slides = document.querySelector(".hero-slides");
 const slideImages = document.querySelectorAll(".hero-slides img");
 
 let currentIndex = 0;
@@ -136,7 +144,7 @@ const totalSlides = slideImages.length;
 setInterval(() => {
   currentIndex = (currentIndex + 1) % totalSlides;
   slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}, 3500);
+}, 3500); */
 
 // --- Deneme Sürümü Modal İşlemleri ---
 
