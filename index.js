@@ -1,8 +1,110 @@
 // Initialize AOS
-AOS.init({
-  duration: 1000,
-  once: true,
-  offset: 100,
+if (typeof AOS !== "undefined") {
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+  });
+}
+
+const demoOpen = document.getElementById("demo-open");
+const demoDialog = document.getElementById("demo-dialog");
+const demoClose = document.getElementById("demo-close");
+const demoVideo = document.getElementById("demo-video");
+const demoStatus = document.getElementById("demo-status");
+const demoPlaylist = Array.from(
+  document.querySelectorAll(".demo-playlist-item"),
+);
+let demoVideoIndex = 0;
+let demoPlaybackVersion = 0;
+
+function showDemoStatus(message) {
+  demoStatus.textContent = message;
+  demoStatus.hidden = !message;
+}
+
+function playDemoVideo(index) {
+  demoVideoIndex = index;
+  const playbackVersion = ++demoPlaybackVersion;
+  showDemoStatus("");
+  demoPlaylist.forEach((button, buttonIndex) => {
+    button.setAttribute("aria-pressed", String(buttonIndex === index));
+  });
+  demoVideo.src = demoPlaylist[index].dataset.videoSrc;
+  demoVideo.load();
+  demoVideo.play().catch((error) => {
+    if (
+      playbackVersion !== demoPlaybackVersion ||
+      !demoDialog.open ||
+      error.name === "AbortError"
+    ) {
+      return;
+    }
+    showDemoStatus(
+      error.name === "NotAllowedError"
+        ? "Videoyu başlatmak için oynat düğmesine basın."
+        : "Video oynatılamadı. Lütfen tekrar deneyin veya başka bir video seçin.",
+    );
+  });
+}
+
+demoOpen.addEventListener("click", () => {
+  if (demoDialog.open) return;
+  demoDialog.showModal();
+  document.body.classList.add("demo-open");
+  playDemoVideo(0);
+});
+
+demoPlaylist.forEach((button, index) => {
+  button.addEventListener("click", () => playDemoVideo(index));
+});
+
+demoVideo.addEventListener("ended", () => {
+  if (demoDialog.open && demoVideoIndex < demoPlaylist.length - 1) {
+    playDemoVideo(demoVideoIndex + 1);
+  }
+});
+
+demoVideo.addEventListener("playing", () => showDemoStatus(""));
+
+demoVideo.addEventListener("error", () => {
+  if (demoDialog.open) {
+    showDemoStatus(
+      "Video yüklenemedi. Lütfen tekrar deneyin veya başka bir video seçin.",
+    );
+  }
+});
+
+demoClose.addEventListener("click", () => demoDialog.close());
+
+demoDialog.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    demoDialog.close();
+  }
+});
+
+demoDialog.addEventListener("click", (event) => {
+  if (event.target !== demoDialog) return;
+  const bounds = demoDialog.getBoundingClientRect();
+  if (
+    event.clientX < bounds.left ||
+    event.clientX > bounds.right ||
+    event.clientY < bounds.top ||
+    event.clientY > bounds.bottom
+  ) {
+    demoDialog.close();
+  }
+});
+
+demoDialog.addEventListener("close", () => {
+  ++demoPlaybackVersion;
+  demoVideo.pause();
+  demoVideo.removeAttribute("src");
+  demoVideo.load();
+  showDemoStatus("");
+  document.body.classList.remove("demo-open");
+  demoOpen.focus();
 });
 
 // Counter Animation

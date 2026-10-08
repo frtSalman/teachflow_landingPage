@@ -163,7 +163,15 @@
                 <a class="btn btn-outline-large" href="#pricing"
                   >Planları İnceleyin</a
                 >
-                <a class="btn btn-outline-large" href="#">Demo İzleyin</a>
+                <button
+                  class="btn btn-outline-large no-loading"
+                  id="demo-open"
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-controls="demo-dialog"
+                >
+                  Demo İzleyin
+                </button>
               </div>
               <!-- <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
               <span class="me-3"
@@ -445,7 +453,15 @@
               <div class="pricing-card featured">
                 <h3>3 Aylık</h3>
                 <div class="price">
-                  <span class="price-currency">₺</span>3900
+                  <div class="price-offer">
+                    <span>
+                      <span class="visually-hidden">Eski fiyat: </span>
+                      <del class="price-original">₺4.500</del>
+                    </span>
+                    <span class="price-saving">₺600 tasarruf</span>
+                  </div>
+                  <span class="visually-hidden">İndirimli fiyat: </span>
+                  <span class="price-currency">₺</span>3.900
                 </div>
                 <div
                   class="student-pricing"
@@ -494,7 +510,15 @@
               <div class="pricing-card">
                 <h3>6 Aylık</h3>
                 <div class="price">
-                  <span class="price-currency">₺</span>6900
+                  <div class="price-offer">
+                    <span>
+                      <span class="visually-hidden">Eski fiyat: </span>
+                      <del class="price-original">₺9.000</del>
+                    </span>
+                    <span class="price-saving">₺2.100 tasarruf</span>
+                  </div>
+                  <span class="visually-hidden">İndirimli fiyat: </span>
+                  <span class="price-currency">₺</span>6.900
                 </div>
                 <div
                   class="student-pricing"
@@ -543,7 +567,15 @@
               <div class="pricing-card">
                 <h3>12 Aylık</h3>
                 <div class="price">
-                  <span class="price-currency">₺</span>12900
+                  <div class="price-offer">
+                    <span>
+                      <span class="visually-hidden">Eski fiyat: </span>
+                      <del class="price-original">₺18.000</del>
+                    </span>
+                    <span class="price-saving">₺5.100 tasarruf</span>
+                  </div>
+                  <span class="visually-hidden">İndirimli fiyat: </span>
+                  <span class="price-currency">₺</span>12.900
                 </div>
                 <div
                   class="student-pricing"
@@ -780,6 +812,64 @@
         </div>
       </section>
     </main>
+
+    <dialog
+      class="demo-dialog"
+      id="demo-dialog"
+      aria-labelledby="demo-title"
+      aria-describedby="demo-description"
+    >
+      <div class="demo-header">
+        <h2 id="demo-title">TeachFlow Demo Videoları</h2>
+        <button class="demo-close" id="demo-close" type="button" autofocus>
+          Kapat <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <p id="demo-description">
+        İzlemek istediğiniz videoyu seçin. Videolar sırayla oynatılır.
+      </p>
+      <video
+        class="demo-video"
+        id="demo-video"
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="TeachFlow demo video oynatıcısı"
+      >
+        Tarayıcınız video oynatmayı desteklemiyor.
+      </video>
+      <p class="demo-status" id="demo-status" role="status" hidden></p>
+      <div class="demo-playlist" role="group" aria-label="Demo video listesi">
+        <button
+          class="demo-playlist-item"
+          type="button"
+          data-video-src="https://cdn.teachflow.net/adVideos/video-1.mp4"
+          aria-controls="demo-video"
+          aria-pressed="false"
+        >
+          Video 1
+        </button>
+        <button
+          class="demo-playlist-item"
+          type="button"
+          data-video-src="https://cdn.teachflow.net/adVideos/video-2.mp4"
+          aria-controls="demo-video"
+          aria-pressed="false"
+        >
+          Video 2
+        </button>
+        <button
+          class="demo-playlist-item"
+          type="button"
+          data-video-src="https://cdn.teachflow.net/adVideos/video-3.mp4"
+          aria-controls="demo-video"
+          aria-pressed="false"
+        >
+          Video 3
+        </button>
+      </div>
+    </dialog>
+
     <!-- Footer -->
     <footer>
       <div class="container">

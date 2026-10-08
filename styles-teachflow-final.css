@@ -33,6 +33,100 @@ body {
   background-color: #ffffff;
 }
 
+body.demo-open {
+  overflow: hidden;
+}
+
+.demo-dialog {
+  width: min(56rem, calc(100% - 2rem));
+  max-height: 90vh;
+  max-height: 90dvh;
+  margin: auto;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  overflow-y: auto;
+  border: 1px solid #d8e9f7;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  color: var(--text-dark);
+  box-shadow: 0 24px 70px rgba(9, 43, 99, 0.3);
+}
+
+.demo-dialog::backdrop {
+  background: rgba(5, 22, 48, 0.78);
+}
+
+.demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.demo-header h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+.demo-close {
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d8e9f7;
+  border-radius: 0.65rem;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.demo-video {
+  display: block;
+  width: 100%;
+  max-height: 55vh;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  background: #000000;
+}
+
+.demo-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+}
+
+.demo-playlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.demo-playlist-item {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d8e9f7;
+  border-radius: 0.75rem;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-playlist-item[aria-pressed="true"] {
+  border-color: var(--primary-color);
+  background: var(--gradient-primary);
+  color: #ffffff;
+}
+
+.demo-close:hover,
+.demo-playlist-item:hover {
+  border-color: var(--primary-color);
+}
+
+.demo-close:focus-visible,
+.demo-playlist-item:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
 /* Navigation */
 .navbar {
   background: white !important;
@@ -365,6 +459,35 @@ body {
 .price-period {
   font-size: 1rem;
   color: var(--text-light);
+}
+
+.price-offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.price-original {
+  font-weight: 500;
+  text-decoration-thickness: 2px;
+}
+
+.pricing-card.featured .price-original {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.price-saving {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #b0e54c;
+  color: #21440d;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 /* FAQ Section */
